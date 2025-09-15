@@ -1,0 +1,43 @@
+<div class="product-wrapper h-full pl-[2rem] mt-[8rem]! w-full overflow-hidden relative mb-3 flex items-start">
+  <div class="product-image group h-[41.443rem] w-[41.443rem] cursor-pointer overflow-hidden relative flex-[0_0_60%]">
+    <div class="image-wrapper relative group h-[100%] w-[100%]">
+      <div
+        class="absolute top-0 left-0 z-[10] bg-[#000] h-[100%]! w-[100%]! opacity-0 group-hover:opacity-20 duration-700">
+      </div>
+      <img [src]="Product()?.image"
+        class="transition-transform duration-700 transform group-hover:scale-125 h-[100%] w-[100%] " alt="">
+    </div>
+  </div>
+  <div class="product-info px-[3rem] flex-[0_0_40%]">
+    <div class="heading flex flex-col justify-between border-b-[2px] mb-[1rem]!">
+      <h1 class="text-[2.5rem] font-medium">{{Product()?.name}}</h1>
+      <div class="price">
+        <span class="text-[#696969] text-[1.5rem]">${{Product()?.price}}</span>
+      </div>
+    </div>
+    <div class="product-description">
+      <h4 class="text-[#868686]">{{Product()?.description}}</h4>
+    </div>
+    <div class="flex items-center justify-between py-3">
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-[18px] cursor-pointer" (click)="DecrementQuantity(Product())">-</span>
+        <input type="number" name="quantity-number" class="w-48 text-center" value={{Product()?.quantity}}>
+        <span class="text-[18px] cursor-pointer" (click)="IncreaseQuantity(Product())">+</span>
+      </div>
+      <div>
+        <app-button text="Add To Cart" (click)="addToCart(Product())"></app-button>
+      </div>
+    </div>
+    <div class="social-wrapper flex items-center justify-between py-4">
+      <span class="h-[2.188rem] w-[2.188rem] border-[1px] rounded-full flex items-center justify-center z-[999]
+      cursor-pointer" (click)="toggleLike()">
+        <fa-icon [icon]="Product()?.fav == true ? faHeartSolid :faHeart"></fa-icon>
+      </span>
+      <div class="social-media-links flex items-center gap-3">
+        <fa-icon [icon]="socialIcon.facebook" class="text-[20px]"></fa-icon>
+        <fa-icon [icon]="socialIcon.whatsapp" class="text-[20px]"></fa-icon>
+        <fa-icon [icon]="socialIcon.instagram" class="text-[20px]"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

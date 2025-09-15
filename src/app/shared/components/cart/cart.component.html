@@ -1,0 +1,47 @@
+<div class="cart-items py-[11rem]  px-4 md:px-[9rem]">
+  <h1 class="text-center font-bold text-3xl pb-4">My Orders</h1>
+  <div class="cart-wrapper overflow-x-auto">
+    <div *ngIf="cartStore.cartItemLength() == 0" class="text-center">
+      <h1 class="text-2xl">Cart is Empty! Wanna Explore our Collections? <a routerLink="/" class="text-[blue]
+        text-xl">click here</a> </h1>
+    </div>
+    <table *ngIf="cartStore.cartArray().length > 0" class="w-full  border-spacing-y-4 border border-gray-300">
+      <thead>
+        <tr>
+          <th class="p-2">image</th>
+          <th class="p-2">name</th>
+          <th class="p-2">price</th>
+          <th class="p-2">quantity</th>
+          <th class="p-2">actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of cartStore.cartArray(); track $index) {
+        <tr class="text-center border border-gray-300 dark:border-gray-600 py-3">
+          <td class="flex items-center justify-center p-2"><img [src]="item.image" class="w-16 h-16 object-cover"
+              alt=""></td>
+          <td class="p-2">{{item.name}}</td>
+          <td class="p-2">{{item.price}}</td>
+          <td class="p-2">
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-[18px] cursor-pointer" (click)="addMoreItems(item,'-')">-</span>
+              <input type="number" name="quantity-number" class="w-16 text-center" value={{item.quantity}}>
+              <span class="text-[18px] cursor-pointer" (click)="addMoreItems(item,'+')">+</span>
+            </div>
+          </td>
+          <td class="p-2"><app-button text="Remove" (click)="removeItems(item)"></app-button></td>
+        </tr>
+        }
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="p-2 text-right">
+            <h1 class="font-bold text-lg">Total Price: <span class="font-light ">{{cartStore.itemsPrice()}}</span></h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

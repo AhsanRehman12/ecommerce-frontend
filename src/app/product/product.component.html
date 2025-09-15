@@ -1,0 +1,48 @@
+<div class="flex items-center flex-col py-[5rem]">
+  <div
+    class="product-main-container flex flex-col sm:flex-row items-center sm:justify-center sm:flex-wrap gap-3 w-[100%] pb-[2rem]">
+    @for (item of productData; track item.id) {
+    <div
+      class="product-wrapper h-[28.889rem] w-[21.109rem] overflow-hidden relative mb-3 border border-gray-100  flex-[0_0_48%] lg:flex-[0_0_30%] xl:flex-[0_0_25%]">
+      <div class="product-image group w-[100%] h-auto cursor-pointer overflow-hidden relative">
+        <div class="image-wrapper relative group" (click)="ShowProductDetail(item.id)">
+          <div
+            class="absolute top-0 left-0 z-[10] h-[100%] w-[100%] bg-[#000] opacity-0 group-hover:opacity-20 duration-700">
+          </div>
+          <img [src]="item.image" 
+            class="w-[100%] transition-transform duration-700 transform group-hover:scale-125 h-[24.577rem] " alt="">
+        </div>
+
+        <span
+          class="absolute right-3 top-3 h-[2.188rem] w-[2.188rem] bg-[#fff] rounded-full flex items-center justify-center z-[999]">
+          <fa-icon
+          (click)="likeProduct(item)" [icon]="item.fav == true ? faHeartSolid :faHeart"></fa-icon>
+
+        </span>
+        <div
+          class="view-add-to-cart flex items-center gap-2 w-[100%] absolute top-[75%] left-[18%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-[999]">
+          
+          <span
+            class="text-[13px] w-[6.233rem] h-[2.063rem] rounded-full bg-[#fff] px-2 mx-2 flex items-center justify-center
+            -translate-x-[-112px] transition-ease-in duration-700 group-hover:-translate-x-[0] hover:text-[#fff] hover:bg-[#000]">Quick
+            View</span>
+          <span (click)="cartStore.addToCart(item)"
+            class="text-[13px] w-[6.233rem] h-[2.063rem] rounded-full bg-[#fff] px-2 mx-2 -translate-x-[112px] transition-ease-in duration-700 group-hover:-translate-x-[0] flex items-center justify-center hover:text-[#fff] hover:bg-[#000]">Add
+            to Cart</span>
+        </div>
+      </div>
+      <div class="product-info px-3 p-2" (click)="ShowProductDetail(item.id)">
+        <div class="heading flex flex-col justify-between">
+          <h1 class="text-[14px]">{{item.name}}</h1>
+          <div>
+            <span class="text-[#696969] text-[14px]">${{item.price}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="show-more">
+    <app-button text="ShowMore"></app-button>
+  </div>
+</div>
