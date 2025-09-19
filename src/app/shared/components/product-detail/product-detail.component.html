@@ -1,5 +1,6 @@
-<div class="product-wrapper h-full pl-[2rem] mt-[8rem]! w-full overflow-hidden relative mb-3 flex items-start">
-  <div class="product-image group h-[41.443rem] w-[41.443rem] cursor-pointer overflow-hidden relative flex-[0_0_60%]">
+<div
+  class="product-wrapper h-full mt-[2rem]! lg:pl-[2rem] lg:my-[4rem]! w-full overflow-hidden relative mb-3  sm:p-4 sm:flex lg:items-start sm:justify-between">
+  <div class="product-image group h-[44.688] lg:w-[44.688] cursor-pointer overflow-hidden relative flex-[0_0_55%]">
     <div class="image-wrapper relative group h-[100%] w-[100%]">
       <div
         class="absolute top-0 left-0 z-[10] bg-[#000] h-[100%]! w-[100%]! opacity-0 group-hover:opacity-20 duration-700">
@@ -8,9 +9,9 @@
         class="transition-transform duration-700 transform group-hover:scale-125 h-[100%] w-[100%] " alt="">
     </div>
   </div>
-  <div class="product-info px-[3rem] flex-[0_0_40%]">
+  <div class="product-info px-[1rem] flex-[0_0_45%]">
     <div class="heading flex flex-col justify-between border-b-[2px] mb-[1rem]!">
-      <h1 class="text-[2.5rem] font-medium">{{Product()?.name}}</h1>
+      <h1 class="text-[2rem] font-medium">{{Product()?.name}}</h1>
       <div class="price">
         <span class="text-[#696969] text-[1.5rem]">${{Product()?.price}}</span>
       </div>
@@ -18,13 +19,13 @@
     <div class="product-description">
       <h4 class="text-[#868686]">{{Product()?.description}}</h4>
     </div>
-    <div class="flex items-center justify-between py-3">
-      <div class="flex items-center justify-center gap-2">
+    <div class="py-3 flex items-center justify-between items-center sm:items-start sm:flex-col lg:flex-row">
+      <div class="flex items-center lg:justify-center gap-2">
         <span class="text-[18px] cursor-pointer" (click)="DecrementQuantity(Product())">-</span>
-        <input type="number" name="quantity-number" class="w-48 text-center" value={{Product()?.quantity}}>
+        <input type="number" name="quantity-number" class="w-25 sm:w-48 text-center" value={{Product()?.quantity}}>
         <span class="text-[18px] cursor-pointer" (click)="IncreaseQuantity(Product())">+</span>
       </div>
-      <div>
+      <div class="py-3 lg:py-0">
         <app-button text="Add To Cart" (click)="addToCart(Product())"></app-button>
       </div>
     </div>

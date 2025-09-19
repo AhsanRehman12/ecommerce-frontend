@@ -1,16 +1,16 @@
-<div class="navbar mb-5 relative">
-  <nav class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md shadow-md z-[99999]">
+<div class="navbar mb-5 relative bg-[#ffffff]">
+  <nav class="w-full bg-white/70 backdrop-blur-md shadow-md z-[99999]">
     <div class="logo">
       <img src="/favicon.ico" />
     </div>
     <ul class="hidden md:flex md:items-center md:justify-between gap-4">
-      <li><a routerLink="/" class="hover:text-blue-500 transition-colors px-4 py-2">Home</a></li>
-      <li><a routerLink="/about-us" class="hover:text-blue-500 transition-colors px-4 py-2">About</a></li>
-      <li><a href="#" class="hover:text-blue-500 transition-colors px-4 py-2">Shop</a></li>
-      <li><a href="#" class="hover:text-blue-500 transition-colors px-4 py-2">Contact</a></li>
+      <li><a routerLink="/" class="hover:text-[#00bcd4] transition-colors py-2">Home</a></li>
+      <li><a routerLink="/about-us" class="hover:text-[#00bcd4] transition-colors py-2">About</a></li>
+      <li><a href="#" class="hover:text-[#00bcd4] transition-colors py-2">Shop</a></li>
+      <li><a href="#" class="hover:text-[#00bcd4] transition-colors py-2">Contact</a></li> 
     </ul>
 
-    <div class="side-menu flex items-center justify-center gap-4 relative">
+    <div class="hidden side-menu md:flex md:items-center md:justify-center md:gap-4 md:relative">
       <div class="search-bar relative">
         <input type="search" name="search-bar" class="z-[999] rounded-full focus:border-none p-[0.5rem 1rem]" id="">
       </div>
@@ -38,15 +38,32 @@
   </nav>
 
   <div *ngIf="sideBar() === true" [class.translate-x-full]="!sideBar()" [class.translate-x-0]="sideBar()"
-    class="absolute top-0 right-0 h-screen w-64 bg-gray-400 shadow-xl z-[999999999] transform transition-transform duration-500 ease-in-out p-4">
-    <div class="cross-button">
+    class="absolute top-0 right-0 h-screen w-64  bg-[#ffffff] shadow-xl z-[999999999] transform transition-transform duration-500 ease-in-out md:hidden">
+    <div class="cross-button px-4 pt-4">
       <fa-icon [icon]="faCross" (click)="toggleSideBar()" class=" cursor-pointer"></fa-icon>
     </div>
-    <ul class="flex flex-col items-start gap-4 py-6">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Contact</a></li>
+    <ul>
+      <li class="w-full border-b border-b-gray-300 py-3!"><a href="#" class="px-4">Home</a></li>
+      <li class="w-full border-b border-b-gray-300 py-3!"><a href="#" class="px-4">About</a></li>
+      <li class="w-full border-b border-b-gray-300 py-3!"><a href="#" class="px-4">Shop</a></li>
+      <li class="w-full border-b border-b-gray-300 py-3!"><a href="#" class="px-4">Contact</a></li>
     </ul>
+
+    <div class="side-menu flex-col items-center justify-center gap-4 relative">
+      <div class="flex-col items-center">
+        <div class="border-b border-b-gray-500  py-3! px-4">
+          <fa-icon [icon]="faUser" class="p-2 cursor-pointer text-[1.1rem]"></fa-icon>
+        </div>
+        <div routerLink="/wishlist" class="relative border-b border-b-gray-500  py-3! px-4">
+          <fa-icon [icon]="faHeart" class="p-2 cursor-pointer text-[1.1rem]"></fa-icon>
+        </div>
+
+        <div routerLink="/my-cart" class="relative border-b border-b-gray-500  py-3! px-4">
+          <fa-icon [icon]="faCart" class="p-2 cursor-pointer text-[1.1rem]"></fa-icon>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>

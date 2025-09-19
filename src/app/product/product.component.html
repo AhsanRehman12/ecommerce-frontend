@@ -3,7 +3,7 @@
     class="product-main-container flex flex-col sm:flex-row items-center sm:justify-center sm:flex-wrap gap-3 w-[100%] pb-[2rem]">
     @for (item of productData; track item.id) {
     <div
-      class="product-wrapper h-[28.889rem] w-[21.109rem] overflow-hidden relative mb-3 border border-gray-100  flex-[0_0_48%] lg:flex-[0_0_30%] xl:flex-[0_0_25%]">
+      class="product-wrapper h-[28.889rem] w-[21.109rem] overflow-hidden relative mb-3 border border-gray-300  flex-[0_0_48%] lg:flex-[0_0_30%] xl:flex-[0_0_25%]">
       <div class="product-image group w-[100%] h-auto cursor-pointer overflow-hidden relative">
         <div class="image-wrapper relative group" (click)="ShowProductDetail(item.id)">
           <div
@@ -35,7 +35,7 @@
         <div class="heading flex flex-col justify-between">
           <h1 class="text-[14px]">{{item.name}}</h1>
           <div>
-            <span class="text-[#696969] text-[14px]">${{item.price}}</span>
+            <span class="text-[#00bcd4] text-[14px]">${{item.price}}</span>
           </div>
         </div>
       </div>
