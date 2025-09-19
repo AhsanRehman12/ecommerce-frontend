@@ -13,7 +13,7 @@ export class ProductService {
       id: '1',
       name: 'Adilette Slide Sandal Colorful',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/image1.png',
+      image: 'assets/img/image.jpg',
       price: 300,
       quantity: 1,
       fav: false
@@ -22,7 +22,7 @@ export class ProductService {
       id: '2',
       name: 'Adilette Slide Sandal Colorful',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/image2.jpeg',
+      image: 'assets/img/image2.jpeg',
       price: 100,
       quantity: 1,
       fav: false
@@ -31,7 +31,7 @@ export class ProductService {
       id: '3',
       name: 'Adilette Colorful',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/newimage.jpg',
+      image: 'assets/img/newimage.jpg',
       price: 800,
       quantity: 1,
       fav: false
@@ -40,7 +40,7 @@ export class ProductService {
       id: '4',
       name: 'Adilette Slide Sandal Colorful',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/images.jpeg',
+      image: 'assets/img/images.jpeg',
       price: 0,
       quantity: 1,
       fav: false
@@ -49,7 +49,7 @@ export class ProductService {
       id: '5',
       name: 'Adilette Slide Colorful',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/image1.png',
+      image: 'assets/img/image1.png',
       price: 400,
       quantity: 1,
       fav: false
@@ -58,7 +58,7 @@ export class ProductService {
       id: '6',
       name: 'Adilette Colorful',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/image1.png',
+      image: 'assets/img/image1.png',
       price: 300,
       quantity: 1,
       fav: false
@@ -67,7 +67,7 @@ export class ProductService {
       id: '7',
       name: 'Adilette Slide',
       description: 'Adilette Slide Sandal Colorful',
-      image: '/image1.png',
+      image: 'assets/img/image1.png',
       price: 200,
       quantity: 1,
       fav: false
